@@ -29,21 +29,22 @@ data.each do |attribute_hash, block|
   end
 end
 
-new_array = final_hash.keys
+new_key = final_hash.keys
+
 data[:color].each do |bird_color, name|
   name.each do |bird_name|
-    new_array.each do |item|
+    new_key.each do |item|
       if bird_name === item 
-        final[item][:color] << bird_color.to_s 
+        final_hash[item][:color] << bird_color.to_s
       end
     end
   end
 end
 data[:gender].each do |gender, girl_boy|
   girl_boy.each do |bird_name|
-    new_array do |item|
+    new_key do |item|
       if bird_name === item
-        final[item] [:gender] << gender.to_s
+        final_hash[item] [:gender] << gender.to_s
       end
     end
   end
@@ -51,9 +52,9 @@ end
 
 data[:lives].each do |location, loc_name|
   loc_name.each do |bird_name|
-    new_array.each do |item|
+    new_key.each do |item|
       if bird_name === item 
-        final[item][:lives] << location
+        final_hash[item][:lives] << location
       end
     end
   end
